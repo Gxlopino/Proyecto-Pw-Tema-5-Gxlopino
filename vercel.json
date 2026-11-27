@@ -1,28 +1,13 @@
 {
-  "version": 2,
   "buildCommand": "npm run build",
-  "outputDirectory": "public/dist",
-  "builds": [
+  "outputDirectory": "public",
+  "functions": {
+    "api/index.js": { "includeFiles": "views/**", "maxDuration": 60 }
+  },
+  "rewrites": [
     {
-      "src": "public/dist/**/*",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "api/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["public/dist/**", "views/**", "node_modules/pg/**"]
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/dist/(.*)",
-      "dest": "/public/dist/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.js"
+      "source": "/((?!dist/|assets/|favicon.ico).*)",
+      "destination": "/api/index.js"
     }
   ]
 }

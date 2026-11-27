@@ -1,3 +1,4 @@
+// src/widgets/UploadFile.jsx
 // src/components/widgets/UploadFile.jsx
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';

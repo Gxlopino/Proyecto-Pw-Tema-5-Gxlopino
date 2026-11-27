@@ -1,7 +1,12 @@
-node_modules/
+# .gitignore
 .env
-.DS_Store
+.env.*
+!.env.example
+node_modules/
+public/dist/
+.vercel/
+sessions/
 *.log
-.vercel
-.env*
-dist
+coverage/
+.playwright/
+db/dump*

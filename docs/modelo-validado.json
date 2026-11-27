@@ -1,0 +1,2044 @@
+{
+  "columns": [
+    {
+      "table_name": "ambientes",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('ambientes_id_seq'::regclass)"
+    },
+    {
+      "table_name": "ambientes",
+      "column_name": "sede_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "ambientes",
+      "column_name": "codigo",
+      "data_type": "character varying",
+      "character_maximum_length": 15,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "ambientes",
+      "column_name": "tipo",
+      "data_type": "character varying",
+      "character_maximum_length": 20,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "ambientes",
+      "column_name": "nombre",
+      "data_type": "character varying",
+      "character_maximum_length": 60,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "ambientes",
+      "column_name": "pabellon",
+      "data_type": "character varying",
+      "character_maximum_length": 30,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "ambientes",
+      "column_name": "piso",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "ambientes",
+      "column_name": "capacidad",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "ambientes",
+      "column_name": "activo",
+      "data_type": "boolean",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "true"
+    },
+    {
+      "table_name": "asignaciones",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('asignaciones_id_seq'::regclass)"
+    },
+    {
+      "table_name": "asignaciones",
+      "column_name": "ticket_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "asignaciones",
+      "column_name": "tecnico_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "asignaciones",
+      "column_name": "asignado_por_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "asignaciones",
+      "column_name": "tipo",
+      "data_type": "character varying",
+      "character_maximum_length": 20,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "asignaciones",
+      "column_name": "motivo",
+      "data_type": "character varying",
+      "character_maximum_length": 240,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "asignaciones",
+      "column_name": "nota",
+      "data_type": "text",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "asignaciones",
+      "column_name": "creado_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "bitacora_entradas",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('bitacora_entradas_id_seq'::regclass)"
+    },
+    {
+      "table_name": "bitacora_entradas",
+      "column_name": "ticket_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "bitacora_entradas",
+      "column_name": "autor_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "bitacora_entradas",
+      "column_name": "tipo",
+      "data_type": "character varying",
+      "character_maximum_length": 10,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "bitacora_entradas",
+      "column_name": "texto",
+      "data_type": "character varying",
+      "character_maximum_length": 600,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "bitacora_entradas",
+      "column_name": "creado_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('cambios_prioridad_id_seq'::regclass)"
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "column_name": "ticket_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "column_name": "anterior",
+      "data_type": "character varying",
+      "character_maximum_length": 10,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "column_name": "nueva",
+      "data_type": "character varying",
+      "character_maximum_length": 10,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "column_name": "motivo",
+      "data_type": "character varying",
+      "character_maximum_length": 240,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "column_name": "autor_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "column_name": "creado_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "categorias",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('categorias_id_seq'::regclass)"
+    },
+    {
+      "table_name": "categorias",
+      "column_name": "nombre",
+      "data_type": "character varying",
+      "character_maximum_length": 60,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "categorias",
+      "column_name": "parent_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "categorias",
+      "column_name": "prioridad_defecto",
+      "data_type": "character varying",
+      "character_maximum_length": 10,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "categorias",
+      "column_name": "tiempo_esperado_horas",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "categorias",
+      "column_name": "descripcion",
+      "data_type": "character varying",
+      "character_maximum_length": 240,
+      "is_nullable": "NO",
+      "column_default": "''::character varying"
+    },
+    {
+      "table_name": "categorias",
+      "column_name": "activa",
+      "data_type": "boolean",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "true"
+    },
+    {
+      "table_name": "categorias",
+      "column_name": "creada_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "especialidades_declaradas",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('especialidades_declaradas_id_seq'::regclass)"
+    },
+    {
+      "table_name": "especialidades_declaradas",
+      "column_name": "usuario_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "especialidades_declaradas",
+      "column_name": "categoria_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "esperas_ticket",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('esperas_ticket_id_seq'::regclass)"
+    },
+    {
+      "table_name": "esperas_ticket",
+      "column_name": "ticket_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "esperas_ticket",
+      "column_name": "motivo",
+      "data_type": "text",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "esperas_ticket",
+      "column_name": "fecha_retorno",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "esperas_ticket",
+      "column_name": "inicio_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "esperas_ticket",
+      "column_name": "fin_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "estados_ticket",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('estados_ticket_id_seq'::regclass)"
+    },
+    {
+      "table_name": "estados_ticket",
+      "column_name": "codigo",
+      "data_type": "character varying",
+      "character_maximum_length": 15,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "estados_ticket",
+      "column_name": "nombre",
+      "data_type": "character varying",
+      "character_maximum_length": 30,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "estados_ticket",
+      "column_name": "color",
+      "data_type": "character varying",
+      "character_maximum_length": 7,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "estados_ticket",
+      "column_name": "es_final",
+      "data_type": "boolean",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "false"
+    },
+    {
+      "table_name": "historial_estados",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('historial_estados_id_seq'::regclass)"
+    },
+    {
+      "table_name": "historial_estados",
+      "column_name": "ticket_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "historial_estados",
+      "column_name": "estado_anterior",
+      "data_type": "character varying",
+      "character_maximum_length": 15,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "historial_estados",
+      "column_name": "estado_nuevo",
+      "data_type": "character varying",
+      "character_maximum_length": 15,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "historial_estados",
+      "column_name": "autor_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "historial_estados",
+      "column_name": "motivo",
+      "data_type": "text",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "historial_estados",
+      "column_name": "permanencia_min",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "0"
+    },
+    {
+      "table_name": "historial_estados",
+      "column_name": "creado_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "invitaciones",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('invitaciones_id_seq'::regclass)"
+    },
+    {
+      "table_name": "invitaciones",
+      "column_name": "nombres",
+      "data_type": "character varying",
+      "character_maximum_length": 60,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "invitaciones",
+      "column_name": "apellidos",
+      "data_type": "character varying",
+      "character_maximum_length": 60,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "invitaciones",
+      "column_name": "email",
+      "data_type": "character varying",
+      "character_maximum_length": 100,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "invitaciones",
+      "column_name": "rol",
+      "data_type": "character varying",
+      "character_maximum_length": 15,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "invitaciones",
+      "column_name": "token_hash",
+      "data_type": "character varying",
+      "character_maximum_length": 64,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "invitaciones",
+      "column_name": "invitado_por_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "invitaciones",
+      "column_name": "estado",
+      "data_type": "character varying",
+      "character_maximum_length": 15,
+      "is_nullable": "NO",
+      "column_default": "'pendiente'::character varying"
+    },
+    {
+      "table_name": "invitaciones",
+      "column_name": "creada_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "invitaciones",
+      "column_name": "vence_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "invitaciones",
+      "column_name": "aceptada_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "prioridades",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('prioridades_id_seq'::regclass)"
+    },
+    {
+      "table_name": "prioridades",
+      "column_name": "codigo",
+      "data_type": "character varying",
+      "character_maximum_length": 10,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "prioridades",
+      "column_name": "nombre",
+      "data_type": "character varying",
+      "character_maximum_length": 20,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "prioridades",
+      "column_name": "orden",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "prioridades",
+      "column_name": "color",
+      "data_type": "character varying",
+      "character_maximum_length": 7,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "prioridades",
+      "column_name": "horas",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "reaperturas",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('reaperturas_id_seq'::regclass)"
+    },
+    {
+      "table_name": "reaperturas",
+      "column_name": "ticket_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "reaperturas",
+      "column_name": "autor_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "reaperturas",
+      "column_name": "motivo",
+      "data_type": "text",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "reaperturas",
+      "column_name": "creado_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "sedes",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('sedes_id_seq'::regclass)"
+    },
+    {
+      "table_name": "sedes",
+      "column_name": "nombre",
+      "data_type": "character varying",
+      "character_maximum_length": 60,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "sedes",
+      "column_name": "direccion",
+      "data_type": "character varying",
+      "character_maximum_length": 120,
+      "is_nullable": "NO",
+      "column_default": "''::character varying"
+    },
+    {
+      "table_name": "sedes",
+      "column_name": "activa",
+      "data_type": "boolean",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "true"
+    },
+    {
+      "table_name": "sesiones",
+      "column_name": "sid",
+      "data_type": "character varying",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "sesiones",
+      "column_name": "sess",
+      "data_type": "json",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "sesiones",
+      "column_name": "expire",
+      "data_type": "timestamp without time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tecnicos_categorias",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('tecnicos_categorias_id_seq'::regclass)"
+    },
+    {
+      "table_name": "tecnicos_categorias",
+      "column_name": "tecnico_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tecnicos_categorias",
+      "column_name": "categoria_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tecnicos_categorias",
+      "column_name": "habilitado_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('tickets_id_seq'::regclass)"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "codigo",
+      "data_type": "character varying",
+      "character_maximum_length": 24,
+      "is_nullable": "NO",
+      "column_default": "((('TCK-'::text || (EXTRACT(year FROM now()))::text) || '-'::text) || lpad((nextval('ticket_codigo_seq'::regclass))::text, 5, '0'::text))"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "asunto",
+      "data_type": "character varying",
+      "character_maximum_length": 120,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "descripcion",
+      "data_type": "character varying",
+      "character_maximum_length": 600,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "categoria_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "subcategoria_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "ambiente_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "solicitante_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "tecnico_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "prioridad",
+      "data_type": "character varying",
+      "character_maximum_length": 10,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "prioridad_sugerida",
+      "data_type": "character varying",
+      "character_maximum_length": 10,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "estado",
+      "data_type": "character varying",
+      "character_maximum_length": 15,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "creado_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "vence_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets",
+      "column_name": "tiempo_espera_min",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "0"
+    },
+    {
+      "table_name": "tickets_cierres",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('tickets_cierres_id_seq'::regclass)"
+    },
+    {
+      "table_name": "tickets_cierres",
+      "column_name": "ticket_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets_cierres",
+      "column_name": "solucion",
+      "data_type": "text",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets_cierres",
+      "column_name": "resuelto_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets_cierres",
+      "column_name": "cerrado_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "tickets_cierres",
+      "column_name": "tiempo_atencion_min",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "tokens_recuperacion",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('tokens_recuperacion_id_seq'::regclass)"
+    },
+    {
+      "table_name": "tokens_recuperacion",
+      "column_name": "usuario_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tokens_recuperacion",
+      "column_name": "token_hash",
+      "data_type": "character varying",
+      "character_maximum_length": 64,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tokens_recuperacion",
+      "column_name": "creado_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "tokens_recuperacion",
+      "column_name": "vence_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "tokens_recuperacion",
+      "column_name": "usado_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "unidades",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('unidades_id_seq'::regclass)"
+    },
+    {
+      "table_name": "unidades",
+      "column_name": "nombre",
+      "data_type": "character varying",
+      "character_maximum_length": 100,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "nextval('usuarios_id_seq'::regclass)"
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "nombres",
+      "data_type": "character varying",
+      "character_maximum_length": 60,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "apellidos",
+      "data_type": "character varying",
+      "character_maximum_length": 60,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "email",
+      "data_type": "character varying",
+      "character_maximum_length": 100,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "password_hash",
+      "data_type": "character varying",
+      "character_maximum_length": 100,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "telefono",
+      "data_type": "character varying",
+      "character_maximum_length": 15,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "unidad_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "vinculo",
+      "data_type": "character varying",
+      "character_maximum_length": 20,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "rol",
+      "data_type": "character varying",
+      "character_maximum_length": 15,
+      "is_nullable": "NO",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "estado",
+      "data_type": "character varying",
+      "character_maximum_length": 15,
+      "is_nullable": "NO",
+      "column_default": "'activo'::character varying"
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "motivo_bloqueo",
+      "data_type": "text",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "intentos_fallidos",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "0"
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "bloqueado_hasta",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "ambiente_habitual_id",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "creado_en",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "now()"
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "ultimo_acceso",
+      "data_type": "timestamp with time zone",
+      "character_maximum_length": null,
+      "is_nullable": "YES",
+      "column_default": null
+    },
+    {
+      "table_name": "usuarios",
+      "column_name": "session_version",
+      "data_type": "integer",
+      "character_maximum_length": null,
+      "is_nullable": "NO",
+      "column_default": "1"
+    }
+  ],
+  "constraints": [
+    {
+      "table_name": "ambientes",
+      "conname": "ambientes_capacidad_check",
+      "contype": "c",
+      "definition": "CHECK ((capacidad > 0))"
+    },
+    {
+      "table_name": "ambientes",
+      "conname": "ambientes_codigo_key",
+      "contype": "u",
+      "definition": "UNIQUE (codigo)"
+    },
+    {
+      "table_name": "ambientes",
+      "conname": "ambientes_piso_check",
+      "contype": "c",
+      "definition": "CHECK ((piso >= 0))"
+    },
+    {
+      "table_name": "ambientes",
+      "conname": "ambientes_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "ambientes",
+      "conname": "ambientes_sede_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (sede_id) REFERENCES sedes(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "ambientes",
+      "conname": "ambientes_tipo_check",
+      "contype": "c",
+      "definition": "CHECK (((tipo)::text = ANY ((ARRAY['aula'::character varying, 'aula_magna'::character varying, 'laboratorio'::character varying, 'auditorio'::character varying, 'biblioteca'::character varying, 'otro'::character varying])::text[])))"
+    },
+    {
+      "table_name": "asignaciones",
+      "conname": "asignaciones_asignado_por_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (asignado_por_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "asignaciones",
+      "conname": "asignaciones_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "asignaciones",
+      "conname": "asignaciones_tecnico_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (tecnico_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "asignaciones",
+      "conname": "asignaciones_ticket_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "asignaciones",
+      "conname": "asignaciones_tipo_check",
+      "contype": "c",
+      "definition": "CHECK (((tipo)::text = ANY ((ARRAY['asignacion'::character varying, 'reasignacion'::character varying, 'autoasignacion'::character varying, 'devolucion'::character varying])::text[])))"
+    },
+    {
+      "table_name": "bitacora_entradas",
+      "conname": "bitacora_entradas_autor_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (autor_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "bitacora_entradas",
+      "conname": "bitacora_entradas_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "bitacora_entradas",
+      "conname": "bitacora_entradas_texto_check",
+      "contype": "c",
+      "definition": "CHECK ((length(TRIM(BOTH FROM texto)) > 0))"
+    },
+    {
+      "table_name": "bitacora_entradas",
+      "conname": "bitacora_entradas_ticket_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "bitacora_entradas",
+      "conname": "bitacora_entradas_tipo_check",
+      "contype": "c",
+      "definition": "CHECK (((tipo)::text = ANY ((ARRAY['publico'::character varying, 'interno'::character varying])::text[])))"
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "conname": "cambios_prioridad_anterior_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (anterior) REFERENCES prioridades(codigo)"
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "conname": "cambios_prioridad_autor_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (autor_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "conname": "cambios_prioridad_nueva_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (nueva) REFERENCES prioridades(codigo)"
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "conname": "cambios_prioridad_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "cambios_prioridad",
+      "conname": "cambios_prioridad_ticket_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "categorias",
+      "conname": "categorias_check",
+      "contype": "c",
+      "definition": "CHECK ((parent_id IS DISTINCT FROM id))"
+    },
+    {
+      "table_name": "categorias",
+      "conname": "categorias_id_parent_unique",
+      "contype": "u",
+      "definition": "UNIQUE (id, parent_id)"
+    },
+    {
+      "table_name": "categorias",
+      "conname": "categorias_parent_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (parent_id) REFERENCES categorias(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "categorias",
+      "conname": "categorias_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "categorias",
+      "conname": "categorias_prioridad_defecto_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (prioridad_defecto) REFERENCES prioridades(codigo)"
+    },
+    {
+      "table_name": "categorias",
+      "conname": "categorias_tiempo_esperado_horas_check",
+      "contype": "c",
+      "definition": "CHECK ((tiempo_esperado_horas > 0))"
+    },
+    {
+      "table_name": "especialidades_declaradas",
+      "conname": "especialidades_declaradas_categoria_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "especialidades_declaradas",
+      "conname": "especialidades_declaradas_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "especialidades_declaradas",
+      "conname": "especialidades_declaradas_usuario_id_categoria_id_key",
+      "contype": "u",
+      "definition": "UNIQUE (usuario_id, categoria_id)"
+    },
+    {
+      "table_name": "especialidades_declaradas",
+      "conname": "especialidades_declaradas_usuario_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "esperas_ticket",
+      "conname": "esperas_ticket_check",
+      "contype": "c",
+      "definition": "CHECK (((fin_en IS NULL) OR (fin_en >= inicio_en)))"
+    },
+    {
+      "table_name": "esperas_ticket",
+      "conname": "esperas_ticket_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "esperas_ticket",
+      "conname": "esperas_ticket_ticket_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "estados_ticket",
+      "conname": "estados_ticket_codigo_key",
+      "contype": "u",
+      "definition": "UNIQUE (codigo)"
+    },
+    {
+      "table_name": "estados_ticket",
+      "conname": "estados_ticket_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "historial_estados",
+      "conname": "historial_estados_autor_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (autor_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "historial_estados",
+      "conname": "historial_estados_estado_anterior_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (estado_anterior) REFERENCES estados_ticket(codigo)"
+    },
+    {
+      "table_name": "historial_estados",
+      "conname": "historial_estados_estado_nuevo_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (estado_nuevo) REFERENCES estados_ticket(codigo)"
+    },
+    {
+      "table_name": "historial_estados",
+      "conname": "historial_estados_permanencia_min_check",
+      "contype": "c",
+      "definition": "CHECK ((permanencia_min >= 0))"
+    },
+    {
+      "table_name": "historial_estados",
+      "conname": "historial_estados_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "historial_estados",
+      "conname": "historial_estados_ticket_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "invitaciones",
+      "conname": "invitaciones_check",
+      "contype": "c",
+      "definition": "CHECK ((vence_en > creada_en))"
+    },
+    {
+      "table_name": "invitaciones",
+      "conname": "invitaciones_estado_check",
+      "contype": "c",
+      "definition": "CHECK (((estado)::text = ANY ((ARRAY['pendiente'::character varying, 'aceptada'::character varying, 'rechazada'::character varying, 'vencida'::character varying])::text[])))"
+    },
+    {
+      "table_name": "invitaciones",
+      "conname": "invitaciones_invitado_por_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (invitado_por_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "invitaciones",
+      "conname": "invitaciones_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "invitaciones",
+      "conname": "invitaciones_rol_check",
+      "contype": "c",
+      "definition": "CHECK (((rol)::text = ANY ((ARRAY['tecnico'::character varying, 'supervisor'::character varying])::text[])))"
+    },
+    {
+      "table_name": "invitaciones",
+      "conname": "invitaciones_token_hash_key",
+      "contype": "u",
+      "definition": "UNIQUE (token_hash)"
+    },
+    {
+      "table_name": "prioridades",
+      "conname": "prioridades_codigo_key",
+      "contype": "u",
+      "definition": "UNIQUE (codigo)"
+    },
+    {
+      "table_name": "prioridades",
+      "conname": "prioridades_horas_check",
+      "contype": "c",
+      "definition": "CHECK ((horas > 0))"
+    },
+    {
+      "table_name": "prioridades",
+      "conname": "prioridades_orden_check",
+      "contype": "c",
+      "definition": "CHECK ((orden > 0))"
+    },
+    {
+      "table_name": "prioridades",
+      "conname": "prioridades_orden_key",
+      "contype": "u",
+      "definition": "UNIQUE (orden)"
+    },
+    {
+      "table_name": "prioridades",
+      "conname": "prioridades_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "reaperturas",
+      "conname": "reaperturas_autor_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (autor_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "reaperturas",
+      "conname": "reaperturas_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "reaperturas",
+      "conname": "reaperturas_ticket_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "sedes",
+      "conname": "sedes_nombre_key",
+      "contype": "u",
+      "definition": "UNIQUE (nombre)"
+    },
+    {
+      "table_name": "sedes",
+      "conname": "sedes_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "sesiones",
+      "conname": "sesiones_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (sid)"
+    },
+    {
+      "table_name": "tecnicos_categorias",
+      "conname": "tecnicos_categorias_categoria_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "tecnicos_categorias",
+      "conname": "tecnicos_categorias_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "tecnicos_categorias",
+      "conname": "tecnicos_categorias_tecnico_id_categoria_id_key",
+      "contype": "u",
+      "definition": "UNIQUE (tecnico_id, categoria_id)"
+    },
+    {
+      "table_name": "tecnicos_categorias",
+      "conname": "tecnicos_categorias_tecnico_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (tecnico_id) REFERENCES usuarios(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_ambiente_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (ambiente_id) REFERENCES ambientes(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_categoria_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_codigo_key",
+      "contype": "u",
+      "definition": "UNIQUE (codigo)"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_estado_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (estado) REFERENCES estados_ticket(codigo)"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_prioridad_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (prioridad) REFERENCES prioridades(codigo)"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_prioridad_sugerida_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (prioridad_sugerida) REFERENCES prioridades(codigo)"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_solicitante_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (solicitante_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_subcategoria_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (subcategoria_id) REFERENCES categorias(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_subcategoria_padre_fk",
+      "contype": "f",
+      "definition": "FOREIGN KEY (subcategoria_id, categoria_id) REFERENCES categorias(id, parent_id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_tecnico_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (tecnico_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "table_name": "tickets",
+      "conname": "tickets_tiempo_espera_min_check",
+      "contype": "c",
+      "definition": "CHECK ((tiempo_espera_min >= 0))"
+    },
+    {
+      "table_name": "tickets_cierres",
+      "conname": "tickets_cierres_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "tickets_cierres",
+      "conname": "tickets_cierres_ticket_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "tickets_cierres",
+      "conname": "tickets_cierres_ticket_id_key",
+      "contype": "u",
+      "definition": "UNIQUE (ticket_id)"
+    },
+    {
+      "table_name": "tickets_cierres",
+      "conname": "tickets_cierres_tiempo_atencion_min_check",
+      "contype": "c",
+      "definition": "CHECK ((tiempo_atencion_min >= 0))"
+    },
+    {
+      "table_name": "tokens_recuperacion",
+      "conname": "tokens_recuperacion_check",
+      "contype": "c",
+      "definition": "CHECK ((vence_en > creado_en))"
+    },
+    {
+      "table_name": "tokens_recuperacion",
+      "conname": "tokens_recuperacion_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "tokens_recuperacion",
+      "conname": "tokens_recuperacion_token_hash_key",
+      "contype": "u",
+      "definition": "UNIQUE (token_hash)"
+    },
+    {
+      "table_name": "tokens_recuperacion",
+      "conname": "tokens_recuperacion_usuario_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE"
+    },
+    {
+      "table_name": "unidades",
+      "conname": "unidades_nombre_key",
+      "contype": "u",
+      "definition": "UNIQUE (nombre)"
+    },
+    {
+      "table_name": "unidades",
+      "conname": "unidades_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "usuarios",
+      "conname": "usuarios_ambiente_habitual_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (ambiente_habitual_id) REFERENCES ambientes(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "usuarios",
+      "conname": "usuarios_email_check",
+      "contype": "c",
+      "definition": "CHECK (((email)::text = lower((email)::text)))"
+    },
+    {
+      "table_name": "usuarios",
+      "conname": "usuarios_email_key",
+      "contype": "u",
+      "definition": "UNIQUE (email)"
+    },
+    {
+      "table_name": "usuarios",
+      "conname": "usuarios_estado_check",
+      "contype": "c",
+      "definition": "CHECK (((estado)::text = ANY ((ARRAY['activo'::character varying, 'inactivo'::character varying, 'bloqueado'::character varying])::text[])))"
+    },
+    {
+      "table_name": "usuarios",
+      "conname": "usuarios_intentos_fallidos_check",
+      "contype": "c",
+      "definition": "CHECK ((intentos_fallidos >= 0))"
+    },
+    {
+      "table_name": "usuarios",
+      "conname": "usuarios_pkey",
+      "contype": "p",
+      "definition": "PRIMARY KEY (id)"
+    },
+    {
+      "table_name": "usuarios",
+      "conname": "usuarios_rol_check",
+      "contype": "c",
+      "definition": "CHECK (((rol)::text = ANY ((ARRAY['usuario'::character varying, 'tecnico'::character varying, 'supervisor'::character varying])::text[])))"
+    },
+    {
+      "table_name": "usuarios",
+      "conname": "usuarios_unidad_id_fkey",
+      "contype": "f",
+      "definition": "FOREIGN KEY (unidad_id) REFERENCES unidades(id) ON DELETE SET NULL"
+    },
+    {
+      "table_name": "usuarios",
+      "conname": "usuarios_vinculo_check",
+      "contype": "c",
+      "definition": "CHECK (((vinculo)::text = ANY ((ARRAY['alumno'::character varying, 'docente'::character varying, 'administrativo'::character varying, 'otro'::character varying])::text[])))"
+    }
+  ],
+  "indexes": [
+    {
+      "tablename": "ambientes",
+      "indexname": "ambientes_codigo_key",
+      "indexdef": "CREATE UNIQUE INDEX ambientes_codigo_key ON public.ambientes USING btree (codigo)"
+    },
+    {
+      "tablename": "ambientes",
+      "indexname": "ambientes_pkey",
+      "indexdef": "CREATE UNIQUE INDEX ambientes_pkey ON public.ambientes USING btree (id)"
+    },
+    {
+      "tablename": "ambientes",
+      "indexname": "ambientes_sede",
+      "indexdef": "CREATE INDEX ambientes_sede ON public.ambientes USING btree (sede_id)"
+    },
+    {
+      "tablename": "asignaciones",
+      "indexname": "asignaciones_pkey",
+      "indexdef": "CREATE UNIQUE INDEX asignaciones_pkey ON public.asignaciones USING btree (id)"
+    },
+    {
+      "tablename": "asignaciones",
+      "indexname": "asignaciones_ticket",
+      "indexdef": "CREATE INDEX asignaciones_ticket ON public.asignaciones USING btree (ticket_id, creado_en)"
+    },
+    {
+      "tablename": "asignaciones",
+      "indexname": "idx_asignaciones_asignado_por_id",
+      "indexdef": "CREATE INDEX idx_asignaciones_asignado_por_id ON public.asignaciones USING btree (asignado_por_id)"
+    },
+    {
+      "tablename": "asignaciones",
+      "indexname": "idx_asignaciones_tecnico_id",
+      "indexdef": "CREATE INDEX idx_asignaciones_tecnico_id ON public.asignaciones USING btree (tecnico_id)"
+    },
+    {
+      "tablename": "bitacora_entradas",
+      "indexname": "bitacora_entradas_pkey",
+      "indexdef": "CREATE UNIQUE INDEX bitacora_entradas_pkey ON public.bitacora_entradas USING btree (id)"
+    },
+    {
+      "tablename": "bitacora_entradas",
+      "indexname": "bitacora_ticket_fecha",
+      "indexdef": "CREATE INDEX bitacora_ticket_fecha ON public.bitacora_entradas USING btree (ticket_id, creado_en)"
+    },
+    {
+      "tablename": "bitacora_entradas",
+      "indexname": "idx_bitacora_entradas_autor_id",
+      "indexdef": "CREATE INDEX idx_bitacora_entradas_autor_id ON public.bitacora_entradas USING btree (autor_id)"
+    },
+    {
+      "tablename": "cambios_prioridad",
+      "indexname": "cambios_prioridad_pkey",
+      "indexdef": "CREATE UNIQUE INDEX cambios_prioridad_pkey ON public.cambios_prioridad USING btree (id)"
+    },
+    {
+      "tablename": "cambios_prioridad",
+      "indexname": "cambios_ticket",
+      "indexdef": "CREATE INDEX cambios_ticket ON public.cambios_prioridad USING btree (ticket_id, creado_en)"
+    },
+    {
+      "tablename": "cambios_prioridad",
+      "indexname": "idx_cambios_prioridad_anterior",
+      "indexdef": "CREATE INDEX idx_cambios_prioridad_anterior ON public.cambios_prioridad USING btree (anterior)"
+    },
+    {
+      "tablename": "cambios_prioridad",
+      "indexname": "idx_cambios_prioridad_autor_id",
+      "indexdef": "CREATE INDEX idx_cambios_prioridad_autor_id ON public.cambios_prioridad USING btree (autor_id)"
+    },
+    {
+      "tablename": "cambios_prioridad",
+      "indexname": "idx_cambios_prioridad_nueva",
+      "indexdef": "CREATE INDEX idx_cambios_prioridad_nueva ON public.cambios_prioridad USING btree (nueva)"
+    },
+    {
+      "tablename": "categorias",
+      "indexname": "categorias_id_parent_unique",
+      "indexdef": "CREATE UNIQUE INDEX categorias_id_parent_unique ON public.categorias USING btree (id, parent_id)"
+    },
+    {
+      "tablename": "categorias",
+      "indexname": "categorias_nombre_nivel",
+      "indexdef": "CREATE UNIQUE INDEX categorias_nombre_nivel ON public.categorias USING btree (COALESCE(parent_id, 0), lower((nombre)::text))"
+    },
+    {
+      "tablename": "categorias",
+      "indexname": "categorias_parent",
+      "indexdef": "CREATE INDEX categorias_parent ON public.categorias USING btree (parent_id)"
+    },
+    {
+      "tablename": "categorias",
+      "indexname": "categorias_pkey",
+      "indexdef": "CREATE UNIQUE INDEX categorias_pkey ON public.categorias USING btree (id)"
+    },
+    {
+      "tablename": "categorias",
+      "indexname": "idx_categorias_prioridad_defecto",
+      "indexdef": "CREATE INDEX idx_categorias_prioridad_defecto ON public.categorias USING btree (prioridad_defecto)"
+    },
+    {
+      "tablename": "especialidades_declaradas",
+      "indexname": "especialidades_categoria",
+      "indexdef": "CREATE INDEX especialidades_categoria ON public.especialidades_declaradas USING btree (categoria_id)"
+    },
+    {
+      "tablename": "especialidades_declaradas",
+      "indexname": "especialidades_declaradas_pkey",
+      "indexdef": "CREATE UNIQUE INDEX especialidades_declaradas_pkey ON public.especialidades_declaradas USING btree (id)"
+    },
+    {
+      "tablename": "especialidades_declaradas",
+      "indexname": "especialidades_declaradas_usuario_id_categoria_id_key",
+      "indexdef": "CREATE UNIQUE INDEX especialidades_declaradas_usuario_id_categoria_id_key ON public.especialidades_declaradas USING btree (usuario_id, categoria_id)"
+    },
+    {
+      "tablename": "esperas_ticket",
+      "indexname": "esperas_ticket_fecha",
+      "indexdef": "CREATE INDEX esperas_ticket_fecha ON public.esperas_ticket USING btree (ticket_id, inicio_en)"
+    },
+    {
+      "tablename": "esperas_ticket",
+      "indexname": "esperas_ticket_pkey",
+      "indexdef": "CREATE UNIQUE INDEX esperas_ticket_pkey ON public.esperas_ticket USING btree (id)"
+    },
+    {
+      "tablename": "esperas_ticket",
+      "indexname": "una_espera_activa",
+      "indexdef": "CREATE UNIQUE INDEX una_espera_activa ON public.esperas_ticket USING btree (ticket_id) WHERE (fin_en IS NULL)"
+    },
+    {
+      "tablename": "estados_ticket",
+      "indexname": "estados_ticket_codigo_key",
+      "indexdef": "CREATE UNIQUE INDEX estados_ticket_codigo_key ON public.estados_ticket USING btree (codigo)"
+    },
+    {
+      "tablename": "estados_ticket",
+      "indexname": "estados_ticket_pkey",
+      "indexdef": "CREATE UNIQUE INDEX estados_ticket_pkey ON public.estados_ticket USING btree (id)"
+    },
+    {
+      "tablename": "historial_estados",
+      "indexname": "historial_estados_pkey",
+      "indexdef": "CREATE UNIQUE INDEX historial_estados_pkey ON public.historial_estados USING btree (id)"
+    },
+    {
+      "tablename": "historial_estados",
+      "indexname": "historial_ticket_fecha",
+      "indexdef": "CREATE INDEX historial_ticket_fecha ON public.historial_estados USING btree (ticket_id, creado_en)"
+    },
+    {
+      "tablename": "historial_estados",
+      "indexname": "idx_historial_estados_autor_id",
+      "indexdef": "CREATE INDEX idx_historial_estados_autor_id ON public.historial_estados USING btree (autor_id)"
+    },
+    {
+      "tablename": "historial_estados",
+      "indexname": "idx_historial_estados_estado_anterior",
+      "indexdef": "CREATE INDEX idx_historial_estados_estado_anterior ON public.historial_estados USING btree (estado_anterior)"
+    },
+    {
+      "tablename": "historial_estados",
+      "indexname": "idx_historial_estados_estado_nuevo",
+      "indexdef": "CREATE INDEX idx_historial_estados_estado_nuevo ON public.historial_estados USING btree (estado_nuevo)"
+    },
+    {
+      "tablename": "invitaciones",
+      "indexname": "invitaciones_autor",
+      "indexdef": "CREATE INDEX invitaciones_autor ON public.invitaciones USING btree (invitado_por_id)"
+    },
+    {
+      "tablename": "invitaciones",
+      "indexname": "invitaciones_pendientes_email",
+      "indexdef": "CREATE UNIQUE INDEX invitaciones_pendientes_email ON public.invitaciones USING btree (lower((email)::text)) WHERE ((estado)::text = 'pendiente'::text)"
+    },
+    {
+      "tablename": "invitaciones",
+      "indexname": "invitaciones_pkey",
+      "indexdef": "CREATE UNIQUE INDEX invitaciones_pkey ON public.invitaciones USING btree (id)"
+    },
+    {
+      "tablename": "invitaciones",
+      "indexname": "invitaciones_token_hash_key",
+      "indexdef": "CREATE UNIQUE INDEX invitaciones_token_hash_key ON public.invitaciones USING btree (token_hash)"
+    },
+    {
+      "tablename": "prioridades",
+      "indexname": "prioridades_codigo_key",
+      "indexdef": "CREATE UNIQUE INDEX prioridades_codigo_key ON public.prioridades USING btree (codigo)"
+    },
+    {
+      "tablename": "prioridades",
+      "indexname": "prioridades_orden_key",
+      "indexdef": "CREATE UNIQUE INDEX prioridades_orden_key ON public.prioridades USING btree (orden)"
+    },
+    {
+      "tablename": "prioridades",
+      "indexname": "prioridades_pkey",
+      "indexdef": "CREATE UNIQUE INDEX prioridades_pkey ON public.prioridades USING btree (id)"
+    },
+    {
+      "tablename": "reaperturas",
+      "indexname": "idx_reaperturas_autor_id",
+      "indexdef": "CREATE INDEX idx_reaperturas_autor_id ON public.reaperturas USING btree (autor_id)"
+    },
+    {
+      "tablename": "reaperturas",
+      "indexname": "reaperturas_pkey",
+      "indexdef": "CREATE UNIQUE INDEX reaperturas_pkey ON public.reaperturas USING btree (id)"
+    },
+    {
+      "tablename": "reaperturas",
+      "indexname": "reaperturas_ticket",
+      "indexdef": "CREATE INDEX reaperturas_ticket ON public.reaperturas USING btree (ticket_id)"
+    },
+    {
+      "tablename": "sedes",
+      "indexname": "sedes_nombre_key",
+      "indexdef": "CREATE UNIQUE INDEX sedes_nombre_key ON public.sedes USING btree (nombre)"
+    },
+    {
+      "tablename": "sedes",
+      "indexname": "sedes_pkey",
+      "indexdef": "CREATE UNIQUE INDEX sedes_pkey ON public.sedes USING btree (id)"
+    },
+    {
+      "tablename": "sesiones",
+      "indexname": "sesiones_expire",
+      "indexdef": "CREATE INDEX sesiones_expire ON public.sesiones USING btree (expire)"
+    },
+    {
+      "tablename": "sesiones",
+      "indexname": "sesiones_pkey",
+      "indexdef": "CREATE UNIQUE INDEX sesiones_pkey ON public.sesiones USING btree (sid)"
+    },
+    {
+      "tablename": "tecnicos_categorias",
+      "indexname": "tecnicos_categoria",
+      "indexdef": "CREATE INDEX tecnicos_categoria ON public.tecnicos_categorias USING btree (categoria_id)"
+    },
+    {
+      "tablename": "tecnicos_categorias",
+      "indexname": "tecnicos_categorias_pkey",
+      "indexdef": "CREATE UNIQUE INDEX tecnicos_categorias_pkey ON public.tecnicos_categorias USING btree (id)"
+    },
+    {
+      "tablename": "tecnicos_categorias",
+      "indexname": "tecnicos_categorias_tecnico_id_categoria_id_key",
+      "indexdef": "CREATE UNIQUE INDEX tecnicos_categorias_tecnico_id_categoria_id_key ON public.tecnicos_categorias USING btree (tecnico_id, categoria_id)"
+    },
+    {
+      "tablename": "tickets",
+      "indexname": "idx_tickets_categoria_id",
+      "indexdef": "CREATE INDEX idx_tickets_categoria_id ON public.tickets USING btree (categoria_id)"
+    },
+    {
+      "tablename": "tickets",
+      "indexname": "idx_tickets_prioridad",
+      "indexdef": "CREATE INDEX idx_tickets_prioridad ON public.tickets USING btree (prioridad)"
+    },
+    {
+      "tablename": "tickets",
+      "indexname": "idx_tickets_prioridad_sugerida",
+      "indexdef": "CREATE INDEX idx_tickets_prioridad_sugerida ON public.tickets USING btree (prioridad_sugerida)"
+    },
+    {
+      "tablename": "tickets",
+      "indexname": "tickets_ambiente_categoria",
+      "indexdef": "CREATE INDEX tickets_ambiente_categoria ON public.tickets USING btree (ambiente_id, categoria_id, estado)"
+    },
+    {
+      "tablename": "tickets",
+      "indexname": "tickets_codigo_key",
+      "indexdef": "CREATE UNIQUE INDEX tickets_codigo_key ON public.tickets USING btree (codigo)"
+    },
+    {
+      "tablename": "tickets",
+      "indexname": "tickets_cola",
+      "indexdef": "CREATE INDEX tickets_cola ON public.tickets USING btree (estado, prioridad, creado_en)"
+    },
+    {
+      "tablename": "tickets",
+      "indexname": "tickets_pkey",
+      "indexdef": "CREATE UNIQUE INDEX tickets_pkey ON public.tickets USING btree (id)"
+    },
+    {
+      "tablename": "tickets",
+      "indexname": "tickets_solicitante",
+      "indexdef": "CREATE INDEX tickets_solicitante ON public.tickets USING btree (solicitante_id, creado_en)"
+    },
+    {
+      "tablename": "tickets",
+      "indexname": "tickets_subcategoria",
+      "indexdef": "CREATE INDEX tickets_subcategoria ON public.tickets USING btree (subcategoria_id)"
+    },
+    {
+      "tablename": "tickets",
+      "indexname": "tickets_tecnico",
+      "indexdef": "CREATE INDEX tickets_tecnico ON public.tickets USING btree (tecnico_id, estado)"
+    },
+    {
+      "tablename": "tickets_cierres",
+      "indexname": "cierres_fecha",
+      "indexdef": "CREATE INDEX cierres_fecha ON public.tickets_cierres USING btree (cerrado_en)"
+    },
+    {
+      "tablename": "tickets_cierres",
+      "indexname": "tickets_cierres_pkey",
+      "indexdef": "CREATE UNIQUE INDEX tickets_cierres_pkey ON public.tickets_cierres USING btree (id)"
+    },
+    {
+      "tablename": "tickets_cierres",
+      "indexname": "tickets_cierres_ticket_id_key",
+      "indexdef": "CREATE UNIQUE INDEX tickets_cierres_ticket_id_key ON public.tickets_cierres USING btree (ticket_id)"
+    },
+    {
+      "tablename": "tokens_recuperacion",
+      "indexname": "recuperacion_usuario",
+      "indexdef": "CREATE INDEX recuperacion_usuario ON public.tokens_recuperacion USING btree (usuario_id)"
+    },
+    {
+      "tablename": "tokens_recuperacion",
+      "indexname": "tokens_recuperacion_pkey",
+      "indexdef": "CREATE UNIQUE INDEX tokens_recuperacion_pkey ON public.tokens_recuperacion USING btree (id)"
+    },
+    {
+      "tablename": "tokens_recuperacion",
+      "indexname": "tokens_recuperacion_token_hash_key",
+      "indexdef": "CREATE UNIQUE INDEX tokens_recuperacion_token_hash_key ON public.tokens_recuperacion USING btree (token_hash)"
+    },
+    {
+      "tablename": "unidades",
+      "indexname": "unidades_nombre_key",
+      "indexdef": "CREATE UNIQUE INDEX unidades_nombre_key ON public.unidades USING btree (nombre)"
+    },
+    {
+      "tablename": "unidades",
+      "indexname": "unidades_pkey",
+      "indexdef": "CREATE UNIQUE INDEX unidades_pkey ON public.unidades USING btree (id)"
+    },
+    {
+      "tablename": "usuarios",
+      "indexname": "usuarios_ambiente",
+      "indexdef": "CREATE INDEX usuarios_ambiente ON public.usuarios USING btree (ambiente_habitual_id)"
+    },
+    {
+      "tablename": "usuarios",
+      "indexname": "usuarios_email_key",
+      "indexdef": "CREATE UNIQUE INDEX usuarios_email_key ON public.usuarios USING btree (email)"
+    },
+    {
+      "tablename": "usuarios",
+      "indexname": "usuarios_pkey",
+      "indexdef": "CREATE UNIQUE INDEX usuarios_pkey ON public.usuarios USING btree (id)"
+    },
+    {
+      "tablename": "usuarios",
+      "indexname": "usuarios_unidad",
+      "indexdef": "CREATE INDEX usuarios_unidad ON public.usuarios USING btree (unidad_id)"
+    }
+  ]
+}

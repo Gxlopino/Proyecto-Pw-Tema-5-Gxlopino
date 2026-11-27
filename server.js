@@ -1,15 +1,11 @@
 // server.js
-import express from 'express';
-import 'dotenv/config';
-import bootstrap from './configs/bootstrap.js';
-
-const app = express();
-
-// Inicializa toda la app
-bootstrap(app);
-
-// Levanta el servidor
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+import app from "./app.js";
+const port = Number(process.env.PORT || 3000);
+app.listen(port, (error) => {
+  if (error) {
+    console.error(`No se pudo iniciar el servidor en el puerto ${port}: ${error.code}`);
+    process.exitCode = 1;
+    return;
+  }
+  console.log(`Mesa de Ayuda: http://localhost:${port}`);
 });

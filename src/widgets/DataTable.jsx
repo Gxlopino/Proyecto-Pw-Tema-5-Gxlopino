@@ -1,3 +1,4 @@
+// src/widgets/DataTable.jsx
 // DataTable.jsx - Versión completa y corregida
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

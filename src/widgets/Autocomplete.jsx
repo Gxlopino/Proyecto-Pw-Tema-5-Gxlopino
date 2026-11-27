@@ -1,3 +1,4 @@
+// src/widgets/Autocomplete.jsx
 // src/components/Autocomplete.jsx
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
