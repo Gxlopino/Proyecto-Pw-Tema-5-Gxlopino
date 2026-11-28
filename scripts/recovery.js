@@ -1,6 +1,6 @@
 // scripts/recovery.js
 import { createInterface } from "node:readline/promises";
-import { createRecovery } from "../website/services/accounts.js";
+import { createRecovery } from "../admin/services/cuenta_services.js";
 import db from "../configs/database.js";
 const rl = createInterface({ input: process.stdin, output: process.stdout });
 try {

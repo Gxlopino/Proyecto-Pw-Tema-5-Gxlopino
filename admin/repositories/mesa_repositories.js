@@ -1,7 +1,7 @@
-// website/repositories/campus.js
+// admin/repositories/mesa_repositories.js
 import { Op } from "sequelize";
 import * as M from "../models/index.js";
-import { safeUser } from "../services/accounts.js";
+import { safeUser } from "../services/cuenta_services.js";
 import { openStates, fullName } from "../services/common.js";
 const serial = async (jobs) => {
   const results = [];

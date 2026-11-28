@@ -1,24 +1,25 @@
 # Mesa de ayuda del campus Tema 5
 
-Conserva las pantallas y navegación del proyecto principal `Gxlopino/Proyecto-Pw-Tema5` y añade persistencia PostgreSQL, sesiones y API Express. Esta versión se publica en `Gxlopino/Proyecto-Pw-Tema-5-Gxlopino` para copiar el código del backend.
+Frontend original: Gxlopino/Proyecto-Pw-Tema5. Copia con backend: Gxlopino/Proyecto-Pw-Tema-5-Gxlopino.
 
-## Estructura
+## Estructura del backend como en el proyecto de clases
 
-- `admin/controllers/`: controladores de vistas usuario, técnico y supervisor.
-- `admin/configs/routes.js`: rutas de los tres roles con autorización del servidor.
-- `website/controllers/visitante_controllers.js`: landing, acceso, salida y cuenta pública.
-- `website/configs/routes.js`: rutas de visitante.
-- `website/routes/campus.js`: API autenticada de cuenta, catálogo, tickets y atención.
-- `website/services/`: validaciones, permisos, transacciones y reglas de negocio.
-- `website/models/index.js` y `website/repositories/campus.js`: modelos y consultas autorizadas.
-- `configs/database.js`: conexión PostgreSQL por variables del entorno.
-- `db/migrations/`, `db/schema.sql` y `db/seed/seed.json`: esquema y datos iniciales.
-- `src/`: frontend de visitante, usuario, técnico y supervisor.
-- `app.js`, `server.js`, `api/index.js` y `vercel.json`: ejecución local y en Vercel.
+- admin/models: un archivo Sequelize por entidad; index.js reúne modelos y relaciones.
+- admin/apis: cuenta_api, usuario_api, catalogo_api, cola_api y atencion_api. Reciben las peticiones y llaman a servicios.
+- admin/controllers: controladores de vistas de usuario, técnico y supervisor; sesion_controllers gestiona respuestas JSON y persistencia de sesión.
+- admin/services: cuenta_services, catalogo_services y tickets_services contienen las reglas de negocio y transacciones; common.js reúne validaciones comunes.
+- admin/repositories/mesa_repositories.js: consultas y snapshot autorizado por rol.
+- admin/configs/routes.js: rutas de las vistas de cada rol. api_routes.js registra la API bajo /api. database.js comparte la misma conexión del servidor.
+- website/controllers/visitante_controllers.js y website/configs/routes.js: vistas públicas de visitante, acceso y salida.
+- configs/database.js: conexión PostgreSQL por variables de entorno; los middlewares verifican sesión y permisos.
+- db/migrations, db/schema.sql y db/seed/seed.json: tablas, restricciones y datos iniciales.
+- app.js, server.js, api/index.js y vercel.json: ejecución local y Vercel.
 
-Se retiraron los ejemplos de países, jugadores, equipos y los componentes de plantilla sin uso. Las páginas de los roles conservan el código del principal; las entradas cargan el snapshot de API antes de renderizar y el contexto actualiza los datos. El texto de recuperación informa que el operador entrega el enlace; no simula envío de correo.
+## Frontend
 
-## Instalación local
+Las páginas, widgets, estilos, parciales, contexto y entradas de src son los mismos del master del principal. Solo src/services cambia para consultar el backend real. api.client.js espera la carga inicial de /api/bootstrap antes de ejecutar las entradas originales; las operaciones refrescan el snapshot. No se usa localStorage como base de datos.
+
+## Configuración local
 
 ```bash
 npm ci
@@ -26,38 +27,35 @@ npm run build
 npm run configure
 ```
 
-En Supabase abrir Connect → Session pooler y usar su host y usuario reales. `configure` solicita ambos y la contraseña de forma oculta. No subir `.env`. Usar una clave aleatoria de al menos 32 caracteres para SESSION_SECRET. `.env.example` solo contiene marcadores.
+En Supabase → Connect → Session pooler obtener el host y el usuario postgres.REFERENCIA reales. configure pide ambos y la contraseña oculta. Nunca versionar .env. SESSION_SECRET necesita un secreto aleatorio de al menos 32 caracteres. .env.example contiene solo marcadores.
 
-En una base nueva y vacía ejecutar una vez:
+Sobre una base NUEVA y vacía:
 
 ```bash
 npm run db:up
 npm run db:seed
-```
-
-No ejecutar también `db/schema.sql`; documenta el esquema creado por las migraciones. No aplicar SQL de la plantilla antigua.
-
-```bash
 npm test
 npm run dev
 ```
 
-Las pruebas de integración crean y limpian datos de prueba. Ejecutarlas en una base de pruebas antes de introducir datos reales. El acceso del sistema usa usuarios y sesiones de Express, no Supabase Auth. La recuperación administrativa utiliza `npm run recovery:link -- CORREO` y entrega el enlace por un canal privado.
+No ejecutar también schema.sql: documenta las tablas creadas por las migraciones. Las pruebas crean y limpian datos de prueba; ejecutarlas antes de introducir datos reales. El acceso usa Express y las tablas de PostgreSQL; no requiere Supabase Auth. La herramienta recovery:link genera el enlace de recuperación administrativo. El envío automático de correo queda pendiente de configurar un proveedor; no está implementado.
 
-## Supabase y Vercel nuevos del equipo
+## Proyectos nuevos del equipo
 
-Supabase: `mesa-ayuda-tema5-oficial`, referencia `fxovnzkhqnggcbncavcb`, organización Pw 26-II. Su base se configura después de copiar el código al repositorio oficial. El proyecto local usa el entorno que configure cada integrante; no se cambian credenciales automáticamente.
+Supabase mesa-ayuda-tema5-oficial, referencia fxovnzkhqnggcbncavcb, organización Pw 26-II. Vercel mesa-ayuda-tema5-oficial, equipo Galopino, vinculado al repositorio principal Gxlopino/Proyecto-Pw-Tema5. Esta copia se publica en el otro repositorio para que el equipo copie los archivos del backend.
 
-Vercel: `mesa-ayuda-tema5-oficial`, equipo Galopino. Vincular exclusivamente `Gxlopino/Proyecto-Pw-Tema5` cuando todas las entregas estén en master. No copiar `.vercel/` del proyecto fuente.
+No copiar .env ni .vercel entre proyectos. Cada copia local usa las credenciales que se configuren expresamente; subir código no cambia la conexión local ni aplica migraciones automáticamente.
 
-Configuración de build: `npm ci`, `npm run build`, salida `public`, preset Other. Las peticiones dinámicas entran por `api/index.js` y las vistas se empaquetan según `vercel.json`.
+## Vercel
 
-Variables privadas del servidor: DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS, DB_SSL, SESSION_SECRET y NODE_ENV. Para Vercel obtener los datos de Transaction pooler y usar 6543; para migraciones y trabajo local usar Session pooler, puerto 5432. DB es la cadena de conexión de dbmate. No añadir prefijo VITE_ a credenciales. Si corresponde, configurar DB_SSL_CA_BASE64 con el certificado CA.
+Preset Other; instalación npm ci; compilación npm run build; salida public. api/index.js exporta app.js. vercel.json empaqueta las vistas y dirige las peticiones dinámicas a Express.
 
-Después del despliegue, con la CLI de Vercel autorizada y el entorno local configurado para la misma base:
+Variables privadas: DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS, DB_SSL, SESSION_SECRET, NODE_ENV; opcionalmente DB_SSL_CA_BASE64. Para Vercel usar los datos reales de Transaction pooler, puerto 6543; para migraciones locales Session pooler, 5432. DB es la cadena privada que usa dbmate. No poner prefijo VITE_ a secretos. No ejecutar migraciones durante el build.
+
+Con la CLI autorizada y la copia local configurada con la misma base, verificar el despliegue nuevo mediante:
 
 ```bash
-npm run verify:deployment -- https://URL-DEL-DESPLIEGUE.vercel.app
+npm run verify:deployment -- https://URL-NUEVA.vercel.app
 ```
 
-Nunca publicar contraseñas, `.env`, `.vercel`, cookies, sesiones, node_modules ni volcados de datos reales.
+Nunca publicar credenciales, .env, .vercel, node_modules, cookies, sesiones o volcados de datos reales.

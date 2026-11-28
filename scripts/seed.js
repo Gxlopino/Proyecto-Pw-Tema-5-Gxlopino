@@ -1,7 +1,7 @@
 // scripts/seed.js
 import fs from "node:fs/promises";
 import bcrypt from "bcryptjs";
-import * as M from "../website/models/index.js";
+import * as M from "../admin/models/index.js";
 const data = JSON.parse(
   await fs.readFile(new URL("../db/seed/seed.json", import.meta.url), "utf8"),
 );

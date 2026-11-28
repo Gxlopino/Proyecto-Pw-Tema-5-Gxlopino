@@ -5,7 +5,7 @@ import { spawnSync } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
 import os from "node:os";
-import * as M from "../website/models/index.js";
+import * as M from "../admin/models/index.js";
 const base = process.argv[2];
 assert.ok(base, "Indica la URL del despliegue nuevo como argumento.");
 assert.match(base, /^https:\/\/[a-z0-9.-]+\.vercel\.app$/);

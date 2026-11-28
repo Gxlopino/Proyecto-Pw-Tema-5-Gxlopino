@@ -1,6 +1,6 @@
-import * as A from "../services/accounts.js";
-import { snapshot } from "../repositories/campus.js";
-import { saveSession, destroySession } from "./campus.js";
+import * as A from "../../admin/services/cuenta_services.js";
+import { snapshot } from "../../admin/repositories/mesa_repositories.js";
+import { saveSession, destroySession } from "../../admin/controllers/sesion_controllers.js";
 export async function home(req, res) {
   const s = await snapshot();
   res.render("visitante/home", {

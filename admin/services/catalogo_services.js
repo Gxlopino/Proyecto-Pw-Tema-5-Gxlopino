@@ -1,7 +1,7 @@
-// website/services/catalog.js
+// admin/services/catalogo_services.js
 import { Op, fn, col, where } from "sequelize";
 import * as M from "../models/index.js";
-import { snapshot, enrich } from "../repositories/campus.js";
+import { snapshot, enrich } from "../repositories/mesa_repositories.js";
 import { requireValue as need, text, openStates, fullName } from "./common.js";
 export async function categories(user, q = {}) {
   const s = await snapshot(user),

@@ -1,4 +1,4 @@
-// website/services/common.js
+// admin/services/common.js
 export class ServiceError extends Error {
   constructor(message, status = 400, errores = null) {
     super(message);

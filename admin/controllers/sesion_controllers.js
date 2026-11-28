@@ -1,4 +1,4 @@
-// website/controllers/campus.js
+// admin/controllers/sesion_controllers.js
 export const endpoint =
   (service, status = 200) =>
   async (req, res) =>

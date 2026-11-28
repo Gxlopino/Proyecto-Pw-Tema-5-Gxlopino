@@ -1,4 +1,4 @@
-// website/services/accounts.js
+// admin/services/cuenta_services.js
 import crypto from "node:crypto";
 import bcrypt from "bcryptjs";
 import { Op } from "sequelize";

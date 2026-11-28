@@ -1,7 +1,7 @@
-// website/services/tickets.js
+// admin/services/tickets_services.js
 import { Op } from "sequelize";
 import * as M from "../models/index.js";
-import { snapshot, enrich } from "../repositories/campus.js";
+import { snapshot, enrich } from "../repositories/mesa_repositories.js";
 import { requireValue as need, text, openStates, fullName } from "./common.js";
 const activeAssignable = ["abierto", "reabierto", "en_atencion", "en_espera"];
 export async function visibleTicket(

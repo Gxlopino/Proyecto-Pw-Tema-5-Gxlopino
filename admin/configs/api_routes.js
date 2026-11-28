@@ -1,0 +1,13 @@
+import { Router } from "express";
+import { registrarCuentaApi } from "../apis/cuenta_api.js";
+import { registrarUsuarioApi } from "../apis/usuario_api.js";
+import { registrarCatalogoApi } from "../apis/catalogo_api.js";
+import { registrarColaApi } from "../apis/cola_api.js";
+import { registrarAtencionApi } from "../apis/atencion_api.js";
+const api = Router();
+registrarCuentaApi(api);
+registrarUsuarioApi(api);
+registrarCatalogoApi(api);
+registrarColaApi(api);
+registrarAtencionApi(api);
+export default api;

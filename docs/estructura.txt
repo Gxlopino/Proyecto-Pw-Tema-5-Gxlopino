@@ -1,15 +1,48 @@
-# Archivos del proyecto Mesa de ayuda
-# Sin dependencias instaladas, secretos ni archivos compilados
-.env.example
+# Estructura de Mesa de ayuda sin dependencias ni secretos
 .gitignore
 .vercelignore
 README.md
+admin/apis/atencion_api.js
+admin/apis/catalogo_api.js
+admin/apis/cola_api.js
+admin/apis/cuenta_api.js
+admin/apis/usuario_api.js
+admin/configs/api_routes.js
+admin/configs/database.js
 admin/configs/routes.js
+admin/controllers/sesion_controllers.js
 admin/controllers/supervisor_controllers.js
 admin/controllers/tecnico_controllers.js
 admin/controllers/usuario_controllers.js
+admin/models/ambiente.js
+admin/models/asignacion.js
+admin/models/base.js
+admin/models/bitacora_entrada.js
+admin/models/cambio_prioridad.js
+admin/models/categoria.js
+admin/models/especialidad_declarada.js
+admin/models/espera_ticket.js
+admin/models/estado_ticket.js
+admin/models/historial_estado.js
+admin/models/index.js
+admin/models/invitacion.js
+admin/models/prioridad.js
+admin/models/reapertura.js
+admin/models/sede.js
+admin/models/tecnico_categoria.js
+admin/models/ticket.js
+admin/models/ticket_cierre.js
+admin/models/token_recuperacion.js
+admin/models/unidad.js
+admin/models/usuario.js
+admin/repositories/mesa_repositories.js
+admin/services/catalogo_services.js
+admin/services/common.js
+admin/services/cuenta_services.js
+admin/services/tickets_services.js
 api/index.js
 app.js
+configs/api_middlewares.js
 configs/database.js
 configs/helpers.js
 configs/middlewares.js
@@ -21,6 +54,7 @@ docs/Arquitectura.md
 docs/Proyecto_PW_2026-2_Tema5_Mesa_de_Ayuda.docx
 docs/Tema5_Mockups_f.pdf
 docs/database (HU-1 a HU-5).puml
+docs/estructura.txt
 docs/modelo-validado.json
 package-lock.json
 package.json
@@ -115,12 +149,5 @@ views/visitante/home.ejs
 views/visitante/login.ejs
 vite.config.js
 website/configs/routes.js
-website/controllers/campus.js
 website/controllers/visitante_controllers.js
-website/models/index.js
-website/repositories/campus.js
-website/routes/campus.js
-website/services/accounts.js
-website/services/catalog.js
-website/services/common.js
-website/services/tickets.js
+docs/Guia_backend_admin_por_integrante.docx

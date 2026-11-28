@@ -1,21 +1,13 @@
 # Arquitectura de Mesa de ayuda
 
-El servidor Express se crea en app.js. server.js abre el puerto local y api/index.js exporta la aplicación para Vercel. Las sesiones se guardan en PostgreSQL y el servidor verifica usuario, rol y versión de sesión en cada petición.
+La estructura sigue el proyecto de clases: modelos individuales, APIs, controladores, servicios, repositorios y configuración del área administrativa se encuentran en admin. website contiene exclusivamente el controlador y las rutas de vistas públicas.
 
-## Rutas y controladores
+El flujo de datos es: src/services → /api → admin/configs/api_routes.js → admin/apis → admin/services → admin/models y admin/repositories → PostgreSQL. Los servicios mantienen las validaciones, transacciones y controles de pertenencia del ticket. Los modelos se definen individualmente y admin/models/index.js declara las relaciones una sola vez.
 
-`website/configs/routes.js` usa `website/controllers/visitante_controllers.js` para las páginas públicas. `admin/configs/routes.js` usa los controladores de usuario, técnico y supervisor; `configs/middlewares.js` impide entrar a otro rol. Se conservan las rutas de React del proyecto principal.
+app.js configura sesión PostgreSQL, verifica usuario y versión de sesión, monta la API y las rutas de vistas. admin/configs/routes.js conserva las rutas de React y llama a los controladores de usuario, técnico y supervisor. website/configs/routes.js llama a visitante_controllers.js para las páginas públicas.
 
-`website/routes/campus.js` publica la API bajo /api y llama a los servicios accounts, catalog y tickets. `website/controllers/campus.js` genera respuestas y gestiona la sesión. Los servicios consultan modelos Sequelize y usan transacciones y restricciones PostgreSQL. `website/repositories/campus.js` filtra el snapshot según el rol.
+El frontend conserva los archivos del principal salvo src/services, que sustituye los datos simulados por peticiones reales. No se cambian páginas, entradas, estilos, widgets ni AuthContext. El punto de conexión api.client.js carga el snapshot antes de que se ejecuten las entradas originales y lo refresca después de las operaciones.
 
-## Frontend
+server.js inicia Express localmente y api/index.js lo exporta para Vercel. Las variables de entorno contienen la conexión a PostgreSQL. Las dos migraciones de db/migrations crean las tablas y las restricciones. La semilla se carga explícitamente con scripts/seed.js. El despliegue no ejecuta migraciones.
 
-Las páginas, parciales, estilos y widgets siguen el proyecto principal. Las cuatro entradas esperan la carga inicial de /api/bootstrap. AuthContext consulta la sesión y refresca los datos. Los servicios de src/services llaman a la API; no guardan tickets ni credenciales en localStorage ni cargan la semilla directamente al navegador.
-
-## Persistencia y despliegue
-
-Las migraciones de db/migrations crean el esquema y sus reglas. scripts/seed.js carga datos de prueba de db/seed/seed.json. configs/database.js obtiene la conexión exclusivamente del entorno. Las vistas EJS y el frontend compilado se sirven junto con Express. No se inicia una migración durante el build de Vercel.
-
-## Colaboración
-
-El principal permanece en Gxlopino/Proyecto-Pw-Tema5. Esta copia preparada se publica en Gxlopino/Proyecto-Pw-Tema-5-Gxlopino. Para llevar los archivos al principal se usan ramas por integrante y pull requests hacia master. No copiar .git, .env o .vercel entre proyectos.
+El frontend original muestra mensajes de envío de recuperación; el backend no incluye un proveedor de correo. Mientras se configure, el operador debe generar y entregar el enlace mediante scripts/recovery.js. No se declara implementado el envío automático.

@@ -4,8 +4,8 @@ import assert from "node:assert/strict";
 import request from "supertest";
 import { Op } from "sequelize";
 import { app, sessionPool, sessionStore } from "../app.js";
-import * as M from "../website/models/index.js";
-import { createRecovery, digest } from "../website/services/accounts.js";
+import * as M from "../admin/models/index.js";
+import { createRecovery, digest } from "../admin/services/cuenta_services.js";
 const stamp = Date.now(),
   prefix = `qa${stamp}`,
   pass = "PruebaSegura2026!",

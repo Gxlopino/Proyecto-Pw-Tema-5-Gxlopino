@@ -54,3 +54,13 @@ async function mutation(method, url, body) {
 export const apiPost = (url, body) => mutation("post", url, body);
 export const apiPut = (url, body) => mutation("put", url, body);
 export const apiDelete = (url) => mutation("delete", url);
+
+// Cargar la instantánea antes de ejecutar las entradas originales del frontend.
+if (typeof window !== "undefined") {
+  try { await refreshSnapshot(); }
+  catch (error) {
+    const root = document.getElementById("root");
+    if (root) { root.textContent = error.message; root.setAttribute("role", "alert"); }
+    throw error;
+  }
+}

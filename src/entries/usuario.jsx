@@ -1,5 +1,4 @@
 // src/entries/usuario.jsx
-import { refreshSnapshot } from '../services/api.client';
 // Mini-app del usuario (/usuario/*). Express la sirve solo con sesión de usuario (soloLogueado + soloUsuario).
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
@@ -82,16 +81,9 @@ function App() {
 
 const container = document.getElementById('root');
 if (container) {
-  try {
-    await refreshSnapshot();
   ReactDOM.createRoot(container).render(
     <React.StrictMode>
       <App />
     </React.StrictMode>
   );
-  } catch (error) {
-    container.textContent = error.message || 'No se pudieron cargar los datos. Recarga la página.';
-    container.setAttribute('role', 'alert');
-    container.className = 'alert alert-danger m-4';
-  }
 }

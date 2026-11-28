@@ -2,17 +2,9 @@
 // Sesión global de cada mini-app con sesión (usuario, técnico, supervisor). Las páginas leen el usuario con useAuth().
 // El login es del servidor: aquí solo se pregunta quién está logueado (GET /api/v1/sessions) y no se pinta la app
 // hasta tener la respuesta. Sin sesión, o con otro rol, se vuelve al servidor para que decida a dónde ir.
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-import * as authService from "../services/auth.service";
-import { refreshSnapshot } from "../services/api.client";
-import { rutaInicio } from "../helpers/navigation";
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import * as authService from '../services/auth.service';
+import { rutaInicio } from '../helpers/navigation';
 
 const AuthContext = createContext(null);
 
@@ -33,33 +25,20 @@ export function AuthProvider({ rol, children }) {
         if (u.rol !== rol) window.location.replace(rutaInicio(u.rol));
         else setCargando(false);
       })
-      .catch(() => window.location.replace("/login"));
+      .catch(() => window.location.replace('/login'));
   }, [refrescar, rol]);
-
-  useEffect(() => {
-    const timer = setInterval(() => refreshSnapshot().catch(() => {}), 30000);
-    return () => clearInterval(timer);
-  }, []);
 
   const value = useMemo(() => ({ usuario, refrescar }), [usuario, refrescar]);
 
   if (cargando) {
-    return (
-      <div className="min-vh-100 d-flex align-items-center justify-content-center">
-        <span
-          className="spinner-border text-primary"
-          role="status"
-          aria-label="Cargando"
-        />
-      </div>
-    );
+    return <div className="min-vh-100 d-flex align-items-center justify-content-center"><span className="spinner-border text-primary" role="status" aria-label="Cargando" /></div>;
   }
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
 export function useAuth() {
   const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error("useAuth debe usarse dentro de <AuthProvider>");
+  if (!ctx) throw new Error('useAuth debe usarse dentro de <AuthProvider>');
   return ctx;
 }
 

@@ -90,10 +90,10 @@ function PasoCorreo() {
   if (resultado) {
     return (
       <div>
-        <div className="label-caps mb-2">Paso 2 · Solicitud recibida</div>
+        <div className="label-caps mb-2">Paso 2 · Enlace enviado</div>
         <span className="d-inline-flex align-items-center justify-content-center border border-success text-success rounded mb-2" style={{ width: 36, height: 36, background: '#E7F4EC' }}><FontAwesomeIcon icon={faCheck} /></span>
-        <h2>Contacta al operador</h2>
-        <p className="text-muted">Solicita al operador el enlace de recuperación para {resultado.email}. Vence en 30 minutos.</p>
+        <h2>Revisa tu correo</h2>
+        <p className="text-muted">Si {resultado.email} tiene una cuenta, le enviamos el enlace. Vence en 30 minutos.</p>
         {resultado.enlace && (
           <div className="surface-soft small p-2 mb-3">
             Entrega 1 (sin envío real de correos): <Link to={resultado.enlace}>abrir el enlace de recuperación</Link>
@@ -109,7 +109,7 @@ function PasoCorreo() {
   return (
     <form onSubmit={enviar} noValidate>
       <div className="label-caps mb-2">Paso 1 · Tu correo</div>
-      <p className="text-muted">Escribe tu correo institucional. El operador te entregará el enlace para crear una nueva contraseña.</p>
+      <p className="text-muted">Escribe el correo con el que te registraste y te enviaremos un enlace para crear una nueva contraseña.</p>
       <FormField id="email" label="Correo institucional" error={error}>
         <input id="email" type="email" className={inputClass(error)} value={email} onChange={(e) => setEmail(e.target.value)} placeholder="nombre@aloe.ulima.edu.pe" />
       </FormField>

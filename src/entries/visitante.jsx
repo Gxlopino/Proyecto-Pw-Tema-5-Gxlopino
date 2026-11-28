@@ -1,5 +1,4 @@
 // src/entries/visitante.jsx
-import { refreshSnapshot } from '../services/api.client';
 // Mini-app del visitante (sin sesión): /registro, /recuperar y /invitacion/:token.
 // La cabecera y el pie los pone views/layouts/website.ejs; el login y la landing son EJS.
 import React from 'react';
@@ -36,16 +35,9 @@ function App() {
 
 const container = document.getElementById('root');
 if (container) {
-  try {
-    await refreshSnapshot();
   ReactDOM.createRoot(container).render(
     <React.StrictMode>
       <App />
     </React.StrictMode>
   );
-  } catch (error) {
-    container.textContent = error.message || 'No se pudieron cargar los datos. Recarga la página.';
-    container.setAttribute('role', 'alert');
-    container.className = 'alert alert-danger m-4';
-  }
 }
