@@ -27,12 +27,14 @@ try {
   } catch (e) {
     if (e.code !== "ENOENT") throw e;
   }
-  const defaultHost = previous.DB_HOST || "aws-2-us-east-1.pooler.supabase.com";
+  const defaultHost = previous.DB_HOST || "";
   const host =
     (await rl.question(`Host Session pooler [${defaultHost}]: `)).trim() ||
     defaultHost;
   if (!/^[a-z0-9.-]+\.pooler\.supabase\.com$/.test(host))
     throw new Error("Host no válido.");
+  const user = (await rl.question("Usuario del Session pooler (postgres.REFERENCIA): ")).trim();
+  if (!/^postgres\.[a-z0-9]+$/.test(user)) throw new Error("Usuario del pooler no válido.");
   rl.close();
   const stdin = process.stdin;
   if (!stdin.isTTY) throw new Error("Usa una terminal interactiva.");
@@ -58,7 +60,6 @@ try {
   });
   if (!pass || /[\r\n]/.test(pass))
     throw new Error("Contraseña vacía o con saltos de línea.");
-  const user = "postgres.cgkpbwvhojwavlsnmpsi";
   const values = {
     ...previous,
     DB: `postgresql://${encode(user)}:${encode(pass)}@${host}:5432/postgres?sslmode=require`,

@@ -1,5 +1,5 @@
-// src/pages/usuario/MisTickets.jsx
 // HU-3 · 3.3 Mis tickets · Usuario (filtros por estado y fechas, búsqueda por código)
+// src/pages/usuario/MisTickets.jsx
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -1,0 +1,12 @@
+import { Router } from "express";
+import * as visitantes from "../controllers/visitante_controllers.js";
+import { redireccionarSiLogueado } from "../../configs/middlewares.js";
+const router = Router();
+router.get("/", visitantes.home);
+router.get("/login", redireccionarSiLogueado, visitantes.login);
+router.post("/login", visitantes.ingresar);
+router.get("/logout", visitantes.logout);
+router.get("/registro", redireccionarSiLogueado, visitantes.cuenta);
+router.get("/recuperar", visitantes.cuenta);
+router.get("/invitacion/:token", visitantes.cuenta);
+export default router;

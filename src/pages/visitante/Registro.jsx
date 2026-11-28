@@ -1,5 +1,5 @@
-// src/pages/visitante/Registro.jsx
 // HU-1 · 1.3 Registro de usuario · Visitante (validación en línea)
+// src/pages/visitante/Registro.jsx
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import FormField, { inputClass } from '../../widgets/FormField';

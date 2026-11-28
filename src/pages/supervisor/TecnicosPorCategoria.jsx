@@ -1,5 +1,5 @@
-// src/pages/supervisor/TecnicosPorCategoria.jsx
 // HU-2 · 2.4 Técnicos por categoría · Supervisor (matriz de asignación + invitar técnico)
+// src/pages/supervisor/TecnicosPorCategoria.jsx
 import React, { useEffect, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

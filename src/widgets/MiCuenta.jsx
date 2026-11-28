@@ -1,5 +1,5 @@
-// src/widgets/MiCuenta.jsx
 // HU-1 · 1.6 Mi cuenta · todos los roles con sesión (/<rol>/mi-cuenta)
+// src/widgets/MiCuenta.jsx
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import FormField, { inputClass } from './FormField';

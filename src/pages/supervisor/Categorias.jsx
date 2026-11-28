@@ -1,5 +1,5 @@
-// src/pages/supervisor/Categorias.jsx
 // HU-2 · 2.1 Categorías y subcategorías · Supervisor
+// src/pages/supervisor/Categorias.jsx
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';

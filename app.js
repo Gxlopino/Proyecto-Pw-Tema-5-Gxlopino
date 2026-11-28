@@ -1,3 +1,5 @@
+import websiteRoutes from "./website/configs/routes.js";
+import adminRoutes from "./admin/configs/routes.js";
 // app.js
 import "dotenv/config";
 import express from "express";
@@ -11,9 +13,7 @@ import { connection } from "./configs/database.js";
 import db from "./configs/database.js";
 import { Usuario } from "./website/models/index.js";
 import { api } from "./website/routes/campus.js";
-import * as A from "./website/services/accounts.js";
-import { snapshot } from "./website/repositories/campus.js";
-import { saveSession, destroySession } from "./website/controllers/campus.js";
+import { destroySession } from "./website/controllers/campus.js";
 import { ServiceError } from "./website/services/common.js";
 const root = path.dirname(fileURLToPath(import.meta.url));
 export const app = express();
@@ -120,74 +120,8 @@ app.get("/healthz", async (req, res) => {
   res.json({ status: "ok", database: "connected" });
 });
 app.use("/api", api);
-app.get("/", async (req, res) => {
-  const s = await snapshot();
-  res.render("visitante/home", {
-    currentPage: "home",
-    categorias: s.categorias
-      .filter((c) => !c.parentId && c.activa)
-      .map((c) => ({
-        ...c,
-        subcategorias: s.categorias.filter(
-          (x) => x.parentId === c.id && x.activa,
-        ),
-      })),
-    prioridades: s.prioridades,
-  });
-});
-app.get("/login", (req, res) =>
-  req.user
-    ? res.redirect(res.locals.rutaInicio)
-    : res.render("visitante/login", { mensaje: null, email: "" }),
-);
-app.post("/login", async (req, res) => {
-  try {
-    const u = await A.login(req.body.email, req.body.password);
-    await saveSession(req, u);
-    res.redirect(
-      u.rol === "supervisor"
-        ? "/supervisor/cola"
-        : u.rol === "tecnico"
-          ? "/tecnico/bandeja"
-          : "/usuario/tickets",
-    );
-  } catch (e) {
-    if (!e.status) throw e;
-    res
-      .status(e.status)
-      .render("visitante/login", {
-        mensaje: e.message,
-        email: typeof req.body.email === "string" ? req.body.email : "",
-        bloqueado: e.status === 403,
-        credenciales: e.status === 401,
-      });
-  }
-});
-app.get("/logout", async (req, res) => {
-  await destroySession(req);
-  res.clearCookie("campus.sid");
-  res.redirect("/login");
-});
-app.get(["/registro", "/recuperar", "/invitacion/:token"], (req, res) =>
-  res.render("visitante/cuenta", { app: "visitante" }),
-);
-for (const rol of ["usuario", "tecnico", "supervisor"])
-  app.get(
-    new RegExp(`^/${rol}(?:/.*)?$`),
-    (req, res, next) => {
-      if (!req.user) return res.redirect("/login");
-      if (req.user.rol !== rol)
-        return res
-          .status(403)
-          .render("403", {
-            seccion: "esta sección",
-            rol: req.user.rol,
-            exclusivo: `Acceso exclusivo para ${rol}.`,
-          });
-      next();
-    },
-    (req, res) => res.render(`${rol}/home`, { rol }),
-  );
+app.use(websiteRoutes);
+app.use(adminRoutes);
 app.use((req, res) => {
   if (req.path.startsWith("/api/"))
     return res

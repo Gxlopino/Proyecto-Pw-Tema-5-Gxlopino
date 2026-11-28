@@ -1,5 +1,5 @@
-// src/pages/visitante/AltaInvitacion.jsx
 // HU-1 · 1.4 Alta por invitación · Visitante (técnico o supervisor invitado)
+// src/pages/visitante/AltaInvitacion.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';

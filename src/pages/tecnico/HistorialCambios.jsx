@@ -1,5 +1,5 @@
-// src/pages/tecnico/HistorialCambios.jsx
 // HU-5 · 5.5 Historial de cambios · Técnico (el supervisor la reutiliza)
+// src/pages/tecnico/HistorialCambios.jsx
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { EstadoBadge } from '../../widgets/Badges';

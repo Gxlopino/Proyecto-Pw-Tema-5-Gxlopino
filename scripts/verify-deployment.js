@@ -6,8 +6,9 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import os from "node:os";
 import * as M from "../website/models/index.js";
-const base = process.argv[2] || "https://mesa-ayuda-tema5.vercel.app";
-assert.match(base, /^https:\/\/mesa-ayuda-tema5(?:-[a-z0-9-]+)?\.vercel\.app$/);
+const base = process.argv[2];
+assert.ok(base, "Indica la URL del despliegue nuevo como argumento.");
+assert.match(base, /^https:\/\/[a-z0-9.-]+\.vercel\.app$/);
 const dir = await fs.mkdtemp(path.join(os.tmpdir(), "mesa-qa-")),
   prefix = `deployqa${Date.now()}`,
   mail = prefix + "@aloe.ulima.edu.pe",

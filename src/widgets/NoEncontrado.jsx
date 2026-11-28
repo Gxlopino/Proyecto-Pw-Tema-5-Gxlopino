@@ -1,5 +1,5 @@
-// src/widgets/NoEncontrado.jsx
 // 404 dentro de cada mini-app (rutas desconocidas de su prefijo, ticket inexistente o ajeno)
+// src/widgets/NoEncontrado.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSesionOpcional } from '../context/AuthContext';

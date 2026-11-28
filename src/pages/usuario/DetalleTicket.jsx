@@ -1,5 +1,5 @@
-// src/pages/usuario/DetalleTicket.jsx
 // HU-3 · 3.4 Detalle del ticket · 3.5 modal de reapertura · cancelación · Usuario
+// src/pages/usuario/DetalleTicket.jsx
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';

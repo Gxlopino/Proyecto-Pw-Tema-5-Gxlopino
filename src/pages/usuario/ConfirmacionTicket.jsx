@@ -1,5 +1,5 @@
-// src/pages/usuario/ConfirmacionTicket.jsx
 // HU-3 · 3.2 Confirmación con código · Usuario
+// src/pages/usuario/ConfirmacionTicket.jsx
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';

@@ -1,5 +1,5 @@
-// src/pages/tecnico/Bandeja.jsx
 // HU-4 · 4.5 Bandeja del técnico · Técnico (con autoasignación sobre sus categorías)
+// src/pages/tecnico/Bandeja.jsx
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';

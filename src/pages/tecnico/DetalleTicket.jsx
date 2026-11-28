@@ -1,5 +1,5 @@
-// src/pages/tecnico/DetalleTicket.jsx
 // HU-5 · 5.1 Detalle del ticket · 5.2 bitácora · 5.3 cambiar estado · 5.4 cerrar · Técnico (el supervisor la reutiliza)
+// src/pages/tecnico/DetalleTicket.jsx
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';

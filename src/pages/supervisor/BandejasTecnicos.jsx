@@ -1,5 +1,5 @@
-// src/pages/supervisor/BandejasTecnicos.jsx
 // HU-4 · Bandejas de técnicos (carga de cada técnico) · Supervisor
+// src/pages/supervisor/BandejasTecnicos.jsx
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import EmptyState from '../../widgets/EmptyState';

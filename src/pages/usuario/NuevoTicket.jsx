@@ -1,5 +1,5 @@
-// src/pages/usuario/NuevoTicket.jsx
 // HU-3 · 3.1 Nuevo ticket · Usuario (incluye el aviso de ticket duplicado)
+// src/pages/usuario/NuevoTicket.jsx
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
